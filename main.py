@@ -8,12 +8,12 @@ def roll_dice(n_dice:int = 1) -> list[int]:
     """Roll number of dice"""
     return [random.randint(1,6) for _ in range(n_dice)]
 
-@mcp.tool
+@mcp.tool()
 def add_numbers(a:float, b:float) -> float:
     """Add two number"""
     return a+b
 
-@mcp.tool
+@mcp.tool()
 def random_number(min_val: int=1, max_val : int=100) -> int:
     """Generate random number within a range"""
     return random.randint(min_val,max_val)
@@ -25,10 +25,10 @@ def server_info()-> str:
         "name":"test server",
         "version":"1.0.0",
         "description":"A MCP server for testing",
-        "tools": ["add_number","random_number","roll_dice"],
+        "tools": ["add_numbers","random_number","roll_dice"],
         "author":"Dhruv Kathiriya"
     }
-    return json.dump(info,indent=2)
+    return json.dumps(info,indent=2)
 
 
 
